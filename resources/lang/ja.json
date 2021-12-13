@@ -22,5 +22,8 @@
     "Home": "ホーム",
     "Logout": "ログアウト",
     "Dashboard": "お知らせ",
-    "You are logged in!":"ログインしました！"
+    "You are logged in!":"ログインしました！",
+
+    "//": "追加部分",
+    "profile": "プロフィール"
 }

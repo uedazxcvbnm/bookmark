@@ -29,3 +29,7 @@ Route::get('/layout/comments', [LayoutController::class, 'comments']);
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+# プロフィール
+use App\Http\Controllers\ProfileController;
+Route::get('/profile', [ProfileController::class, 'index']);
