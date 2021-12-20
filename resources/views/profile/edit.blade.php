@@ -2,7 +2,8 @@
 
 @section('content')
 <div id="profile" class="container">
-    <h1>{{ Auth::user()->name }}のプロフィール</h1>
+    <h1>{{ $user->name }}の編集</h1>
+    
     
 </div>
 @endsection

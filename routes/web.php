@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ProfileController;
 
 /*
 |--------------------------------------------------------------------------
@@ -25,11 +26,14 @@ Route::get('/layout/users', [LayoutController::class, 'users']);
 Route::get('/layout/posts', [LayoutController::class, 'posts']);
 Route::get('/layout/comments', [LayoutController::class, 'comments']);
 
-
+# auth
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 # プロフィール
-use App\Http\Controllers\ProfileController;
-Route::get('/profile', [ProfileController::class, 'index']);
+Route::get('/profile/{user}', [ProfileController::class, 'index'])->name('profile_show');
+# 編集画面
+Route::get('/edit', [ProfileController::class, 'edit'])->name('profile_edit');
+//プロフィール編集
+Route::put('/edit', [ProfileController::class, 'update'])->name('profile_update');

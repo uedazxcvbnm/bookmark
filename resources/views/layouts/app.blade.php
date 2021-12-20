@@ -65,7 +65,7 @@
                                     </a>
 
                                     <!-- プロフィールメニュー -->
-                                    <a class="dropdown-item" href="/profile">
+                                    <a class="dropdown-item" href="/profile/{{ Auth::user()->name }}">
                                         {{ __('profile') }}
                                     </a>
 
