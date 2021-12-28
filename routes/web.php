@@ -32,8 +32,8 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 # プロフィール
-Route::get('/profile/{user}', [ProfileController::class, 'index'])->name('profile_show');
+Route::get('/profile', [ProfileController::class, 'index'])->name('profile_show');
 # 編集画面
 Route::get('/edit', [ProfileController::class, 'edit'])->name('profile_edit');
 //プロフィール編集
-Route::put('/edit', [ProfileController::class, 'update'])->name('profile_update');
+Route::put('/profile', [ProfileController::class, 'update'])->name('profile_update');
