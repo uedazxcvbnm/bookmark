@@ -29,7 +29,7 @@ class UploadImageController extends Controller
 				]);
 			}
 		}
-		return redirect("/list");
+		return redirect("/home");
     }
 }
 

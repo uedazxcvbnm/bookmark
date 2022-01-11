@@ -37,3 +37,10 @@ Route::get('/profile', [ProfileController::class, 'index'])->name('profile_show'
 Route::get('/edit', [ProfileController::class, 'edit'])->name('profile_edit');
 //プロフィール編集
 Route::put('/profile', [ProfileController::class, 'update'])->name('profile_update');
+
+Route::group(['middleware' => 'auth'], function() {
+	Route::get('/form', [App\Http\Controllers\UploadImageController::class, "show"])->name("upload_form");
+	Route::post('/upload', [App\Http\Controllers\UploadImageController::class, "upload"])->name("upload_image");
+});
+
+Route::get('/list', [App\Http\Controllers\ImageListController::class, "show"])->name("image_list");
