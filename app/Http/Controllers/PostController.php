@@ -25,6 +25,6 @@ class PostController extends Controller
             "name" => $name,
             "contents" => $contents,
             ]);
-        return view('/home');
+        return redirect('/home');
     }
 }

@@ -15,7 +15,7 @@ class CreateUploadImageTable extends Migration
     {
         Schema::create('upload_image', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('post_id')->constrained();
+            // $table->foreignId('post_id')->constrained();
             $table->string("file_name");
             $table->string("file_path");
             $table->timestamps();
