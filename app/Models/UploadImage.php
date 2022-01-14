@@ -9,6 +9,11 @@ class UploadImage extends Model
 {
     use HasFactory;
 
+    public function post()
+    {
+        return $this->belongsTo(Post::class);
+    }
+
     protected $table = "upload_image";
     protected $fillable = ["file_name","file_path"];
 }

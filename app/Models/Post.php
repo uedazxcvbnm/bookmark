@@ -18,4 +18,15 @@ class Post extends Model
     {
         return $this->belongsTo(User::class);
     }
+
+    public function uploadimages()
+    {
+        return $this->hasMany(UploadImage::class);
+    }
+
+    protected $fillable = [
+        'user_id',
+        'name',
+        'contents', 
+    ];
 }

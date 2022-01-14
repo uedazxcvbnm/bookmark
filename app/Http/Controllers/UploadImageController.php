@@ -7,7 +7,6 @@ use App\Models\UploadImage;
 
 class UploadImageController extends Controller
 {
-    //
     function show (){
         return view("upload_form");
     }
