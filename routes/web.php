@@ -31,6 +31,7 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/home', [App\Http\Controllers\ImageListController::class, "show"])->name("image_list");
+//Route::get('/home', [App\Http\Controllers\PostListController::class, "show"])->name("post_list");
 
 // プロフィール
 Route::get('/profile', [ProfileController::class, 'index'])->name('profile_show');

@@ -16,20 +16,31 @@
 
                     {{ __('You are logged in!') }}
                 </div>
-                
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a href="{{ route('upload_form') }}">画像アップロード</a>
+                </div>
                 <div class="card-body">
-                    <a href="{{ route('upload_form') }}">Upload</a>
-                    <hr />
-                    
-                    {{-- @foreach($images as $image)
+                    @foreach($images as $image)
                         <div style="width: 18rem; float:left; margin: 16px;">
                         <img src="{{ Storage::url($image->file_path) }}" style="width:100%;"/>
                         <p>{{ $image->file_name }}</p>
-                    </div>
-                    @endforeach --}}
+                        </div>
+                    @endforeach
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a href="{{ route('post_form') }}">文章アップロード</a>
                 </div>
                 <div class="card-body">
-                    <a href="{{ route('post_form') }}">Post_Upload</a>
+                    @foreach($posts as $post)
+                        <p>ID {{ $post->user_id }} : {{ $post->name }}</p>
+                        <p> {{ $post->contents }}</p>
+                        <p style="text-align: right">number{{ $post->id }}</p>
+                        <hr>
+                    @endforeach
                 </div>
             </div>
         </div>
