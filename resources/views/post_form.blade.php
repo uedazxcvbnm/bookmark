@@ -14,6 +14,7 @@
 >
 	@csrf
 	名前: <input type="text" name="name">
+	タグ: <input type="text" name="tags" value="#">
 	投稿: <input type="text" name="contents">
 	<input type="submit">
 </form>

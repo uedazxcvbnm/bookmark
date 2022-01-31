@@ -38,6 +38,10 @@
                     @foreach($posts as $post)
                         <p>ID {{ $post->user_id }} : {{ $post->name }}</p>
                         <p> {{ $post->contents }}</p>
+                        
+                        @foreach($post->tags as $tag)
+                            #{{ $tag->name }}
+                        @endforeach
                         <p style="text-align: right">number{{ $post->id }}</p>
                         <hr>
                     @endforeach

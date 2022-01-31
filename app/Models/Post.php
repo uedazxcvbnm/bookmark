@@ -29,6 +29,8 @@ class Post extends Model
     //     return $this->hasMany(UploadImage::class);
     // }
 
+    public $timestamps = false;
+
     protected $fillable = [
         'user_id',
         'name',
