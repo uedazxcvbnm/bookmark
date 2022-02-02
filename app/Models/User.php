@@ -48,4 +48,12 @@ class User extends Authenticatable
     {
         return $this->hasMany(Post::class);
     }
+    public function bookmark_posts(){
+        return $this->belongsToMany(Post::class,'bookmarks','user_id','post_id');
+    }
+    //BookmarkControllerのis_bookmarkの有無
+    public function is_bookmark($postId){
+        return $this->bookmark_posts()->where('bookmarks.post_id',$postId)->exists();
+        //return true;
+    }
 }

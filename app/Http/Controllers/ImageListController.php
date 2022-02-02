@@ -11,7 +11,7 @@ class ImageListController extends Controller
     function show(){
 		//アップロードした画像を取得
 		$uploads = UploadImage::orderBy("id", "desc")->get();
-		$posts = Post::orderBy("id", "desc")->get();
+		$posts = Post::orderBy("id", "desc")->paginate(10);
 
 		return view("home",[
 			"images" => $uploads,

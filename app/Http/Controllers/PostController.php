@@ -27,4 +27,21 @@ class PostController extends Controller
             ]);
         return redirect('/home');
     }
+    //ここから下がブックマーク機能として追加した場所
+    public function bookmark_posts(){
+        //$posts=Auth::user()->bookmark_posts()->orderby('created_at','desc')->paginate(10);
+        $posts=Auth::user()->bookmark_posts()->orderby('created_at','desc')->get();
+        $data=[
+            'posts'=>$posts,
+        ];
+        return view('bookmarks',$data);
+    }
+    public function index(){
+        //$posts=Post::orderby('created_at','desc')->paginate(10);
+        $posts=Post::orderby('created_at','desc')->get();
+        $data=['posts'=> $posts];
+        //return view('posts.index',$data);
+        return view('posts',$data);
+    }
+    
 }
